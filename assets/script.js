@@ -1,22 +1,28 @@
 var date = moment().format("LL");
 $("#current-date").text(date);
 
+var selectTimeId = document.querySelectorAll('[id^=time]');
+var eventTime;
+for(var i in selectTimeId, i > eventTime.length, i++){
+   eventTime = selectTimeId[i].value;
+   console.log(eventTime);
+}
+
 function colourCoat() {
     // Sets interval in variable
     var dailyInterval = setInterval(function() {
-        var eventTime = ("#time").moment().format("HH A").trim(); //how to convert text string into time ? 
-        console.log(eventTime);
+        var currentTime = moment().hours(); 
   
-      if(eventTime < moment(LT)) { 
+      if(eventTime < currentTime) { 
         //past event
-        document.getElementbyId("#time").className="past";
+        document.getElementsByClassName(".time").className="past";
       }
       //current event
-      if(eventTime = moment(LT)) {
-        document.getElementbyId("#time").className="present";
+      if(eventTime = currentTime) {
+        document.getElementsByClassName(".time").className="present";
       }
-      if (eventTime > moment(LT)) {
-        document.getElementbyId("#time").className="future";
+      if (eventTime > currentTime) {
+        document.getElementsByClassName(".time").className="future";
       }
 
   
@@ -24,3 +30,5 @@ function colourCoat() {
   }
 
   colourCoat();
+
+
