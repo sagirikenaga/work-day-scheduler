@@ -1,32 +1,32 @@
 var date = moment().format("LL");
 $("#current-date").text(date);
 
-var selectTimeId = document.querySelectorAll('[id^=time]');
-var eventTime;
-for(var i in selectTimeId, i > eventTime.length, i++){
-   eventTime = selectTimeId[i].value;
-   console.log(eventTime);
-}
-
 function colourCoat() {
     // Sets interval in variable
     var dailyInterval = setInterval(function() {
         var currentTime = moment().hours(); 
+        console.log(currentTime);
+
+      for(let id = 9; id <= 17;id++){
+            console.log(id);
+           let block =  document.getElementById(JSON.stringify(id))
+           console.log(block)
   
-      if(eventTime < currentTime) { 
+      if(id < currentTime) { 
         //past event
-        document.getElementsByClassName(".time").className="past";
+        document.getElementById("#id").className="past";
       }
       //current event
-      if(eventTime = currentTime) {
-        document.getElementsByClassName(".time").className="present";
+      if(id = currentTime) {
+        document.getElementById("#id").className="present";
       }
-      if (eventTime > currentTime) {
-        document.getElementsByClassName(".time").className="future";
+      if (id > currentTime) {
+        document.getElementById("#id").className="future";
       }
+    }
 
   
-    }, 1000); //every 1000 ms or 1 second, the code is executed .. this code is called every second within the bracket set interval (function, 1000)
+    }, 1000);
   }
 
   colourCoat();
