@@ -43,18 +43,21 @@ textarea{
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: red;
   color: white;
+  border-color:red;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: blue;
   color: white;
+  border-color:blue;
 }
 
 .future {
   background-color: #77dd77;
   color: white;
+  border-color:green;
 }
 
 .saveBtn {
