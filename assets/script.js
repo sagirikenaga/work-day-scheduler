@@ -1,11 +1,14 @@
+//displays current date 
 var date = moment().format("LL");
 $("#current-date").text(date);
 
+//creating function to apply classes depending on time of day
 function colourCoat() {
     // Sets interval in variable
     var dailyInterval = setInterval(function() {
         var currentTime = moment().hours(); 
 
+        //looping through id's given for time blocks
       for (let id = 9; id <= 17; id++) {
 
         if (id < currentTime) { 
@@ -16,6 +19,7 @@ function colourCoat() {
             else if(id == currentTime) {
             document.getElementById(id).className="present description";
         }
+            //future event
             else if (id > currentTime) {
             document.getElementById(id).className="future description";
         }
@@ -28,6 +32,7 @@ function colourCoat() {
 
 let ls = JSON.parse(window.localStorage.getItem("event"));
 
+// setting events into local storage 
 $(".save").on("click", function () {
     // get nearby values
     let value = $(this).siblings("textarea").val();
@@ -40,6 +45,7 @@ $(".save").on("click", function () {
     localStorage.setItem("event", JSON.stringify(todos));
 });
 
+//sets stored event as text in text area for specific time
 $("textarea").each(function(index) {
     let timeBlock = $(this).attr('id');
     for (let i = 0; i < ls.length; i++) {
