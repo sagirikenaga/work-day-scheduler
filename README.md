@@ -10,7 +10,7 @@ This webpage is used by entering desired text into the text area for each time b
 
 ## Deployed Application
 
-The live page is found at https://sagirikenaga.github.io/ ___________
+The live page is found at https://sagirikenaga.github.io/work-day-scheduler/ .
 
 ## Demo
 
